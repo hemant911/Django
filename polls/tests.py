@@ -51,6 +51,7 @@ class QuestionViewTests(TestCase):
        create_question(question_text="Future question.", days=30)
        response = self.client.get(reverse('polls:index'))
        self.assertContains(response, "No polls are available.")
+       print response
        self.assertQuerysetEqual(response.context['latest_question_list'], [])
 
 
