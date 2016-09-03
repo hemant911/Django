@@ -22,7 +22,7 @@ def auth_view(request):
 
 def loggedin(request):
 	return render_to_response('polls/loggedin.html',
-                             {'full_name':request.user.username})
+                             {'user':request.user})
 
 def invalid_login(request):
 	return render_to_response('polls/invalid_login.html') 
